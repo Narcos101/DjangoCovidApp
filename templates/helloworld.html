@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello Vivek</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <style>
+        .container{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body style ="background-color: black">
+
+    <h1 style="color:white; text-align:center"><span style="color:red">Covid-19</span> WorldWide Data</h1>
+    <form method="POST" style="margin-top:100px" class="d-flex justify-content-center align-items-center"action="">
+        {% csrf_token %}
+        <select class="form-control" style="width: 200px;"name='selectedcountry'>
+            {% for list in mylist %}
+            <option>{{list}}</option>
+            {% endfor %}
+        </select>
+        <input class="btn btn-danger"type="submit" name="">
+    </form>
+    <h1 style="margin-top:100px;margin-bottom:100px;color:white;text-align:center">{{selectedcountry}}</h1>
+    <div class="d-flex justify-content-center align-items-center ">
+        <div class="container" style="border-radius: 10px;background-color:yellowgreen;height:100px;width:200px;">
+            <h1 style="text-align:center;color:whitesmoke">{{total}}</h1>
+            <p style="text-align:center;color:whitesmoke">Total cases</p>
+        </div>
+        <div class="container" style="border-radius: 10px;background-color:grey;height:100px;width:200px">
+            <h1 style="text-align:center;color:whitesmoke">{{recovered}}</h1>
+            <p style="text-align:center;color:whitesmoke">Recovered cases</p>
+        </div>
+        <div class="container" style="border-radius: 10px;background-color:pink;height:100px;width:200px">
+            <h1 style="text-align:center;color:whitesmoke">{{new}}</h1>
+            <p style="text-align:center;color:whitesmoke">New cases</p>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="container" style="border-radius: 10px;background-color:magenta;height:100px;width:200px">
+            <h1 style="text-align:center;color:whitesmoke">{{deaths}}</h1>
+            <p style="text-align:center;color:whitesmoke">Death cases</p>
+        </div>
+        <div class="container" style="border-radius: 10px;background-color:red;height:100px;width:200px">
+            <h1 style="text-align:center;color:whitesmoke">{{critical}}</h1>
+            <p style="text-align:center;color:whitesmoke">Critical cases</p>
+        </div>
+        <div class="container" style="border-radius: 10px;background-color:skyblue;height:100px;width:200px">
+            <h1 style="text-align:center;color:whitesmoke">{{active}}</h1>
+            <p style="text-align:center;color:whitesmoke" >Active cases</p>
+        </div>
+    </div>
+    <p style="color:whitesmoke;margin-top: 130px;" ><span style="color:orangered">Developed by</span> @Vivek Jaiswar</p>
+
+</body>
+</html>
