@@ -40,4 +40,4 @@ python manage.py runserver
 
 ## 📜 LICENSE
 
-[MIT](https://github.com/HarshCasper/COVID-Tracker/blob/master/LICENSE)
+[MIT](https://github.com/Narcos101/DjangoCovidApp/blob/main/LICENSE)
